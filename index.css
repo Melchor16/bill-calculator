@@ -1,0 +1,28 @@
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main_app{
+    display: flex;
+}
+
+.tips{
+    display: grid;
+    grid-template-areas: 
+    'text'  'text'  'text'
+    'input' 'input' 'input'
+    'input' 'input' 'input'
+    ;
+}
+
+.tips input[type=radio]{
+    display: none;
+}
+
+.tips label{
+    cursor: pointer;
+    grid-area: 'input';
+}
