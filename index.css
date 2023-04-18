@@ -1,28 +1,351 @@
+:root{
+    --Strong-cyan: hsl(172, 67%, 45%);
+
+    --Very-dark-cyan: hsl(183, 100%, 15%);
+    --Dark-grayish-cyan: hsl(186, 14%, 43%);
+    --Grayish-cyan: hsl(184, 14%, 56%);
+    --Light-grayish-cyan: hsl(185, 41%, 84%);
+    --Very-light-grayish-cyan: hsl(189, 41%, 97%);
+    --White: hsl(0, 0%, 100%);
+}
+
+/* General */
+
+html, body{
+    height: 99%;
+    width: auto;
+    background-color: var(--Light-grayish-cyan);
+    font-family: Space Mono;
+}
+
+::placeholder{
+    color: var(--Grayish-cyan);
+}
+
+input[type='radio']:checked+label{
+    background-color: var(--Strong-cyan);
+    color: var(--Very-dark-cyan);
+}
+
+/* -----HIDE INPUT ARROWS----- */
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type='number']{
+    -moz-appearance: textfield;
+}
+
+/* --------MAIN-------- */
+
 main{
+    height: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: var(--Light-grayish-cyan);
 }
 
+.logo img{
+    height: 3rem;
+    padding-bottom: 2rem;
+}
+
+/* --------MAIN APP-------- */
 .main_app{
     display: flex;
+    justify-content: space-between;
+    background-color: var(--White);
+    border-radius: 1.2rem;
+    width: 43rem;
+    height: 22rem;
+
 }
 
+/* --------CALCULATOR-------- */
+
+.calculator{
+    width: 50%;
+    padding: 2.2rem;
+}
+
+.calculator h1{
+    margin: 0;
+    color: var(--Dark-grayish-cyan);
+    font-size: .8rem;
+}
+
+.bill{
+    width: 97%;
+    height: 2.3rem;
+    position: relative;
+    outline: none;
+    border-style: none;
+    background-color: var(--Very-light-grayish-cyan);
+    border-radius: .3rem;
+    text-align: end;
+    font-size: 1.5rem;
+    color: var(--Very-dark-cyan);
+    font-family: Space Mono;
+}
+
+.bill:focus{
+    border: solid 2px var(--Grayish-cyan);
+}
+
+.bill_input{
+    position: relative;
+}
+
+.bill_input img{
+    position: absolute;
+    z-index: 99;
+    height: 1rem;
+    top: .8rem;
+    left: 1rem;
+}
+
+.ppl_text{
+    padding-top: 2rem;
+    margin: 0;
+    color: var(--Dark-grayish-cyan);
+    font-size: .8rem;
+}
+
+.ppl_input{
+    position: relative;
+}
+
+.ppl_input img{
+    position: absolute;
+    height: 1rem;
+    top: .8rem;
+    left: 1rem;
+}
+
+.people{
+    width: 97%;
+    height: 2.3rem;
+    outline: none;
+    border-style: none;
+    background-color: var(--Very-light-grayish-cyan);
+    border-radius: .3rem;
+    text-align: end;
+    font-size: 1.5rem;
+    color: var(--Very-dark-cyan);
+    font-family: Space Mono;
+}
+
+.people:focus{
+    border: solid 2px var(--Grayish-cyan);
+}
+
+/* TIPS */
 .tips{
+    padding-top: 2rem;
     display: grid;
+    justify-content: center;
+    text-align: center;
+    gap: 6% 3%;
+    grid-template-columns: 31% 31% 31%;
     grid-template-areas: 
-    'text'  'text'  'text'
-    'input' 'input' 'input'
-    'input' 'input' 'input'
+    'select     select  select'
+    'five       ten     fifteen'
+    'twfive     fifty   custom'
     ;
 }
+
 
 .tips input[type=radio]{
     display: none;
 }
 
+.tips p{
+    margin: 0;
+    color: var(--Dark-grayish-cyan);
+    font-size: .8rem;
+    justify-self: start;
+}
+
 .tips label{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.3rem;
+    font-size: 1.2rem;
     cursor: pointer;
-    grid-area: 'input';
+    background-color: var(--Very-dark-cyan);
+    color: var(--White);
+    border-radius: .3rem;
+}
+
+.tips label:hover{
+    background-color: var(--Light-grayish-cyan);
+    color: var(--Very-dark-cyan);
+}
+
+/* tips areas */
+
+.select_tip{
+    grid-area: select;
+}
+
+.tip_5{
+    grid-area: five;
+}
+
+.tip_10{
+    grid-area: ten;
+}
+
+.tip_15{
+    grid-area: fifteen;
+}
+
+.tip_25{
+    grid-area: twfive;
+}
+
+.tip_50{
+    grid-area: fifty;
+}
+
+.custom_tip{
+    grid-area: custom;
+    min-width: 0;
+    min-height: 0;
+    outline: none;
+    border-style: none;
+    background-color: var(--Very-light-grayish-cyan);
+    border-radius: .3rem;
+    font-size: 1rem;
+    text-align: center;
+    color: var(--Very-dark-cyan);
+    font-family: Space Mono;
+}
+
+.custom_tip:focus{
+    border: solid 2px var(--Grayish-cyan);
+}
+
+/* --------RESULT-------- */
+
+.result{
+    width: 50%;
+    margin: 1.5rem;
+    padding: 2.2rem;
+    border-radius: .8rem;
+    background-color: var(--Very-dark-cyan);
+    display: grid;
+    grid-template-rows: 13% 15% 13% 13% 46%;
+    grid-template-areas: 
+    'tp-title   tp-result'
+    'tp-person  tp-result'
+    'tot-title  tot-result'
+    'tot-person tot-result'
+    'reset      reset'
+    ;
+}
+
+.title_text{
+    margin: 0;
+    font-size: .8rem;
+    color: var(--White);
+    text-transform: capitalize;
+    align-self: end;
+}
+
+.person_text{
+    margin: 0;
+    font-size: .7rem;
+    color: var(--Dark-grayish-cyan);
+    align-self: start;
+}
+
+.result_text{
+    padding-right: 2rem;
+    font-size: 2.2rem;
+    color: var(--Grayish-cyan);
+    align-self: center;
+    justify-self: end;
+}
+
+.reset{
+    height: 2.5rem;
+    align-self: end;
+    border-style: none;
+    border-radius: .25rem;
+    background-color: var(--Strong-cyan);
+    color: var(--Very-dark-cyan);
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.reset:hover{
+    cursor: pointer;
+    background-color: var(--Light-grayish-cyan);
+}
+
+.reset_inactive{
+    opacity: .3;
+}
+
+.reset_inactive:hover{
+    cursor: default;
+    background-color: var(--Strong-cyan);
+}
+
+/* Text grid areas */
+
+.tp_title{
+    grid-area: tp-title;
+}
+
+.tp_person{
+    grid-area: tp-person;
+}
+
+.tp_result{
+    grid-area: tp-result;
+}
+
+.tot_title{
+    grid-area: tot-title;
+}
+
+.tot_person{
+    grid-area: tot-person;
+}
+
+.tot_result{
+    grid-area: tot-result;
+}
+
+.reset{
+    grid-area: reset;
+}
+
+/* HIDDEN */
+
+.hidden{
+    display: none;
+}
+
+/* ----------MOBILE---------- */
+
+@media (max-width: 687px){
+    .main_app{
+        flex-direction: column;
+        width: 100%;
+        height: 50rem;
+        align-items: center;
+    }
 }
