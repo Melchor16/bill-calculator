@@ -24,32 +24,33 @@
         <form action="submit" name="bill" class="main_form" id="main_form">
           <div class="bill_input">
             <img src="./images/icon-dollar.svg" alt="$">
-            <input type="number" name="bill" class="bill" id="bill" placeholder="0">
+            <input type="number" min="1" oninput="validity.valid||(value='')" name="bill" class="bill" id="bill" placeholder="0">
           </div>
           <div class="tips">
             <p class="select_tip">Select tip %</p>
-            <input type="radio" name="bill" value="5" id="tip_5"><label for="tip_5" class="tip_5">5%</label>
-            <input type="radio" name="bill" value="10" id="tip_10"><label for="tip_10" class="tip_10">10%</label>
-            <input type="radio" name="bill" value="15" id="tip_15"><label for="tip_15" class="tip_15">15%</label>
-            <input type="radio" name="bill" value="25" id="tip_25"><label for="tip_25" class="tip_25">25%</label>
-            <input type="radio" name="bill" value="50" id="tip_50"><label for="tip_50" class="tip_50">50%</label>
-            <input type="number" name="bill" class="custom_tip" id="custom_tip" placeholder="Custom">
+            <input type="radio" name="bill" value=".05" id="tip_5"><label for="tip_5" class="tip_5">5%</label>
+            <input type="radio" name="bill" value=".10" id="tip_10"><label for="tip_10" class="tip_10">10%</label>
+            <input type="radio" name="bill" value=".15" id="tip_15"><label for="tip_15" class="tip_15">15%</label>
+            <input type="radio" name="bill" value=".25" id="tip_25"><label for="tip_25" class="tip_25">25%</label>
+            <input type="radio" name="bill" value=".50" id="tip_50"><label for="tip_50" class="tip_50">50%</label>
+            <input type="number" min="1" oninput="validity.valid||(value='')" name="bill" class="custom_tip" id="custom_tip" placeholder="Custom">
           </div>
           <p class="ppl_text">Number of people</p>
           <div class="ppl_input">
             <img src="./images/icon-person.svg" alt="Ppl">
-            <input type="number" name="bill" class="people" id="people" placeholder="0">
+            <p class="error_text hidden" id="error">Can't be zero</p>
+            <input type="number" min="1" oninput="validity.valid||(value='')" name="bill" class="people" id="people" placeholder="0">
           </div>
         </form>
       </div>
       <div class="result">
         <p class="tp_title title_text">Tip amount</p>
         <p class="tp_person person_text">/ Person</p>
-        <p class="tp_result result_text">$0.00</p>
+        <p class="tp_result result_text" id="total_tip">$0.00</p>
         
         <p class="tot_title title_text">Total</p>
         <p class="tot_person person_text">/ Person</p>
-        <p class="tot_result result_text">$0.00</p>
+        <p class="tot_result result_text" id="total_bill">$0.00</p>
         
         <button class="reset reset_inactive" id="reset">Reset</button>
       </div>
