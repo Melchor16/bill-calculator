@@ -29,7 +29,7 @@ Users should be able to:
 ### Links
 
 - [Solution URL](https://github.com/Melchor16/bill-calculator)
-- [Live Site URL](https://your-live-site-url.com)
+- [Live Site URL](https://melchor16.github.io/bill-calculator/)
 
 ## My process
 
